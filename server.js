@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3007;
 // const fullUrl = `http://localhost:${port}`;
 
-const fullUrl = `https://api-library-backend-ejs.herokuapp.com/`;
+const fullUrl = `https://api-library-backend-ejs.herokuapp.com`;
 
 app.use(express.static('public'));
 app.use(cors());
