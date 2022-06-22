@@ -25,43 +25,46 @@ app.use(cors());
 
 app.get('/', (req, res) => {
 	res.send(`
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-    <title>Info API</title>
-   <style>
-    body {
-        background-color: #ccc;
-        font-family: monospace;
-        font-size: 1.5rem;
-    }
-    a {
-        color: #777;
-    }
-   </style>
-   </head>
-   <body>
-   <h1>Info API</h1>  
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Info API</title>
+    </head>
+    <style>
+        body {
+            background-color: #aaa;
+            padding: 0 0 0 20px;
+            font-family: monospace;
+            font-size: 1.4rem;
+        } 
+        a {
+            color: #333;
+        }
+    </style>
+    <body>
+   <h1>Data API</h1> 
    <ul>
-   <li><a href="${url}/all">${url}/all</a></li>
-   ${Object.keys(siteData)
-		.map((key) => {
-			return `<li><a href="${url}/${key}">${url}/${key}</a></li>`;
+   ${Object.entries(siteData)
+		.map((entry) => {
+			const idCode = entry[0];
+			const data = entry[1];
+			const fullUrl = `${url}/${idCode}`;
+			return `<li><a href="${fullUrl}">${fullUrl}</a></li>`;
 		})
 		.join('')}
    </ul>
-   </body>
-   </html> 
+    </body>
+    </html>
     `);
 });
 
-Object.entries(siteData).forEach((entry) => {
-	const key = entry[0];
-	const value = entry[1];
-	app.get(`/${key}`, (req, res) => {
-		res.send(value);
+for (const entry of Object.entries(siteData)) {
+	const idCode = entry[0];
+	const data = entry[1];
+	app.get('/' + idCode, (req, res) => {
+		res.send(data);
 	});
-});
+}
 
 app.get(`/all`, (req, res) => {
 	res.send(siteData);
