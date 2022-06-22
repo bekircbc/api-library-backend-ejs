@@ -1,0 +1,11 @@
+<settings>
+  <type>jdbc-mysql</type>
+  <user>sbanks</user>
+  <password>123</password>
+  <url>jdbc:mysql://192.168.1.123:3306/notifications_db</url>
+  <schema>notifications_db</schema>
+  <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+  <prefix_package>false</prefix_package>
+  <use_ssl>false</use_ssl>
+  <auto_reconnect>true</auto_reconnect>
+</settings>
