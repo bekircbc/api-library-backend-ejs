@@ -4,21 +4,21 @@ import cors from 'cors';
 
 //////.env lösung for url
 
-import dotenv from 'dotenv';
-dotenv.config();
-const baseUrl = process.env.BASE_URL;
-const mode = process.env.MODE;
-const port = process.env.PORT;
+// import dotenv from 'dotenv';
+// dotenv.config();
+// const baseUrl = process.env.BASE_URL;
+// const mode = process.env.MODE;
+// const port = process.env.PORT;
 
 /////////////////////////
 
 const app = express();
 
-const url = mode === 'development' ? `${baseUrl}:${port}` : baseUrl;
-// const port = process.env.PORT || 3007;
+// const url = mode === 'development' ? `${baseUrl}:${port}` : baseUrl;
+const port = process.env.PORT || 3007;
 // const fullUrl = `http://localhost:${port}`;
 
-// const fullUrl = `https://api-library-backend-ejs.herokuapp.com`;
+const url = `https://api-library-backend-ejs.herokuapp.com`;
 
 app.use(express.static('public'));
 app.use(cors());
