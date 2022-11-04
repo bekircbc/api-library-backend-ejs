@@ -1,6 +1,6 @@
 import fs from 'fs';
 import * as qsys from './qsys.js';
-import parser from 'xml2json';
+import parse from 'tmxl';
 
 /**
  * Convert XML file to JavaScript object.
@@ -19,7 +19,7 @@ export const getXmlFileAsObject = (pathAndFileName) => {
 	const fullPathAndFileName =
 		qsys.buildSystemAbsolutePathAndFileName(pathAndFileName);
 	const xmlAsText = fs.readFileSync(fullPathAndFileName, 'utf8');
-	const xmlAsJson = parser.toJson(xmlAsText);
+	const xmlAsJson = parse.toJson(xmlAsText);
 	const xmlAsObject = JSON.parse(xmlAsJson);
 	return xmlAsObject;
 };
