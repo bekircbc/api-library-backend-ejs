@@ -1,28 +1,28 @@
 {
-  "name": "api-library-backend-ejs",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.27.2",
-    "cors": "^2.8.5",
-    "csv-parse": "^5.2.0",
-    "dotenv": "^16.0.1",
-    "exceljs": "^4.3.0",
-    "express": "^4.18.1",
-    "markdown-it": "^13.0.1",
-    "sqlite3": "^5.0.8",
-    "xml2json": "^0.12.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+	"name": "api-library-backend-ejs",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon api-library.js",
+		"start": "node api-library.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"cors": "^2.8.5",
+		"csv-parse": "^5.2.0",
+		"dotenv": "^16.0.1",
+		"exceljs": "^4.3.0",
+		"express": "^4.18.2",
+		"markdown-it": "^13.0.1",
+		"sqlite3": "^5.0.8",
+		"xml2json": "^0.12.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	}
 }
