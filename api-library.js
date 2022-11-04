@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 		.map((entry) => {
 			const idCode = entry[0];
 			const data = entry[1];
-			const fullUrl = `${url}/${idCode}`;
+			const fullUrl = `${url}/api/${idCode}`;
 			return `<li><a href="${fullUrl}">${fullUrl}</a></li>`;
 		})
 		.join('')}
@@ -62,12 +62,12 @@ app.get('/', (req, res) => {
 for (const entry of Object.entries(siteData)) {
 	const idCode = entry[0];
 	const data = entry[1];
-	app.get('/' + idCode, (req, res) => {
+	app.get('/api/' + idCode, (req, res) => {
 		res.send(data);
 	});
 }
 
-app.get(`/all`, (req, res) => {
+app.get(`/api/all`, (req, res) => {
 	res.send(siteData);
 });
 
