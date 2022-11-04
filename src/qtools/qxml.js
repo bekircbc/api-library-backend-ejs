@@ -1,6 +1,6 @@
 import fs from 'fs';
 import * as qsys from './qsys.js';
-import parse from 'tmxl';
+import pkg from 'xml-js';
 
 /**
  * Convert XML file to JavaScript object.
@@ -15,11 +15,19 @@ import parse from 'tmxl';
  *   }
  * }
  */
+
+const options = { ignoreComment: true, alwaysChildren: true };
+
 export const getXmlFileAsObject = (pathAndFileName) => {
 	const fullPathAndFileName =
 		qsys.buildSystemAbsolutePathAndFileName(pathAndFileName);
+	console.log(fullPathAndFileName);
 	const xmlAsText = fs.readFileSync(fullPathAndFileName, 'utf8');
-	const xmlAsJson = parse.toJson(xmlAsText);
+	console.log(xmlAsText);
+	const xmlAsJson = pkg.xml2json(xmlAsText, options);
+	console.log(xmlAsJson);
+
 	const xmlAsObject = JSON.parse(xmlAsJson);
+	console.log(xmlAsObject);
 	return xmlAsObject;
 };

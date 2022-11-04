@@ -20,7 +20,7 @@
 		"express": "^4.18.2",
 		"markdown-it": "^13.0.1",
 		"sqlite3": "^5.1.2",
-		"txml": "^5.1.1"
+		"xml-js": "^1.6.11"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.16"
