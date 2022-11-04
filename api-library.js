@@ -14,7 +14,7 @@ const port = process.env.PORT;
 
 const app = express();
 
-const url = mode === 'development' ? `${baseUrl}:${port}` : baseUrl;
+const url = `${baseUrl}:${port}`;
 // const port = process.env.PORT || 3007;
 // const fullUrl = `http://localhost:${port}`;
 
