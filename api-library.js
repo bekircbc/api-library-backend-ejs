@@ -9,16 +9,16 @@ dotenv.config();
 const baseUrl = process.env.BASE_URL;
 const mode = process.env.MODE;
 const port = process.env.PORT;
-
+const backendURL = process.env.BACKEND_URL;
 /////////////////////////
 
 const app = express();
 
-const url = `${baseUrl}:${port}`;
+// const url = `${baseUrl}:${port}`;
 // const port = process.env.PORT || 3007;
 // const fullUrl = `http://localhost:${port}`;
 
-// const url = `https://api-library-backend-ejs.herokuapp.com`;
+const url = backendURL;
 
 app.use(cors());
 
