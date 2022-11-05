@@ -45,12 +45,12 @@ app.get('/', (req, res) => {
     <body>
    <h1>Data API</h1> 
    <ul>
-   <li><a href="${url}/all">${url}/all</a></li>
+   <li><a href="${url}/api/all">${url}/api/all</a></li>
    ${Object.entries(siteData)
 		.map((entry) => {
 			const idCode = entry[0];
 			const data = entry[1];
-			const fullUrl = `${url}/${idCode}`;
+			const fullUrl = `${url}/api/${idCode}`;
 			return `<li><a href="${fullUrl}">${fullUrl}</a></li>`;
 		})
 		.join('')}
