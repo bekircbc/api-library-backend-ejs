@@ -9,16 +9,16 @@ dotenv.config();
 const baseUrl = process.env.BASE_URL;
 const mode = process.env.MODE;
 const port = process.env.PORT;
-const backendURL = process.env.BACKEND_URL;
+// const backendURL = process.env.BACKEND_URL;
 /////////////////////////
 
 const app = express();
 
-// const url = `${baseUrl}:${port}`;
+const url = `${baseUrl}:${port}`;
 // const port = process.env.PORT || 3007;
 // const fullUrl = `http://localhost:${port}`;
 
-const url = backendURL;
+// const url = backendURL;
 
 app.use(cors());
 
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     <body>
    <h1>Data API</h1> 
    <ul>
-   <li><a href="${backendURL}/all">${backendURL}/all</a></li>
+   <li><a href="${url}/all">${url}/all</a></li>
    ${Object.entries(siteData)
 		.map((entry) => {
 			const idCode = entry[0];
