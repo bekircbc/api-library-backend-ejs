@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
     <body>
    <h1>Data API</h1> 
    <ul>
+   <li><a href="${backendURL}/all">${backendURL}/all</a></li>
    ${Object.entries(siteData)
 		.map((entry) => {
 			const idCode = entry[0];
